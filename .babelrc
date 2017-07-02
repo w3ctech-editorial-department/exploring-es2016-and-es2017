@@ -1,0 +1,25 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": ["last 2 versions", "safari >= 7"]
+        }
+      }
+    ],
+    [
+      "es2015",
+      {"modules": false, "loose": true}
+    ],
+    "es2015-without-strict",
+    "es2015-loose-rollup",
+    "es2015-rollup"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "external-helpers"
+  ],
+  "sourceMaps": true
+}

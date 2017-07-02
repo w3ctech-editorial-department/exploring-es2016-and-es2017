@@ -1,0 +1,19 @@
+markdown: kramdown
+highlighter: rouge
+permalink: none
+sitename: Exploring ES2016 and ES2017 中文版
+
+chapters:
+- introduction
+- background
+- ecmascript
+
+introduction: 介绍
+background: 背景
+faq: 常见问题
+appendix: 附录
+ecmascript: ecmascript 2016
+
+#baseurl: '/exploring-es2016-and-es2017'
+baseurl: ''
+theme: jekyll-theme-hacker
