@@ -8,8 +8,8 @@ modifiedOn: 2017-06-21
 <h2 id="introduction">介绍</h2>
 
 - [读者在阅读之前需要知道的那些事](introduction/what-you-need-to-know-about-this-book.html#ch_about-book)
-  - [本书的内容](introduction/what-you-need-to-know-about-this-book.html/#_what-is-in-this-book)
-  - [支持](introduction/what-you-need-to-know-about-this-book.html/#_support)
+  - [本书的内容](introduction/what-you-need-to-know-about-this-book.html#_what-is-in-this-book)
+  - [支持](introduction/what-you-need-to-know-about-this-book.html#_support)
 - [关于作者](introduction/about-the-author.html)
 
 <h2 id="background">背景</h2>
