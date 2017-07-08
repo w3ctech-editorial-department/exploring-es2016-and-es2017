@@ -4,6 +4,7 @@
   "description": "exploring-es2016-and-es2017中文版",
   "main": "index.md",
   "scripts": {
+    "start": "jekyll serve",
     "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
