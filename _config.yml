@@ -6,13 +6,16 @@ sitename: Exploring ES2016 and ES2017 中文版
 chapters:
 - introduction
 - background
-- ecmascript
+- ecmascript-2016
+- ecmascript-2017
+
 
 introduction: 介绍
 background: 背景
 faq: 常见问题
 appendix: 附录
-ecmascript: ecmascript 2016
+ecmascript-2016: ECMAScript 2016
+ecmascript-2017: ECMAScript 2017
 
 #baseurl: '/exploring-es2016-and-es2017'
 baseurl: ''
