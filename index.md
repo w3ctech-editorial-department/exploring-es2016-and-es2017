@@ -24,7 +24,7 @@ modifiedOn: 2017-06-21
 - [常见问题: ES2016 & ES2017](chapter-02/faq.html#ch_faq)
   - [ECMAScript 2016 是不是太过于精简](chapter-02/faq.html#_isnt-ecmascript-2016-too-small)
 
-<h2 id="ecmascript">ECMAScript 2016</h2>
+<h2 id="ecmascript-2016">ECMAScript 2016</h2>
 - [Array.prototype.includes](chapter-03/array-prototype-includes.html)
   - [概览](chapter-03/array-prototype-includes.html#overview)
   - [数组方法：includes](chapter-03/array-prototype-includes.html#includes)
@@ -33,6 +33,12 @@ modifiedOn: 2017-06-21
 - [Exponentiation operator (**)](chapter-04/exponentiation-operator.html)
   - [概览](chapter-04/exponentiation-operator#_overview-1)
   - [为求幂运算创造的中缀运算符](chapter-04/exponentiation-operator#_an-infix-operator-for-exponentiation)
+
+<h2 id="ecmascript-2017">ECMAScript 2017</h2>
+- [函数定义和调用中的尾随逗号](chapter-10/index.html)
+  - [概览](chapter-10/index.html#overview)
+  - [对象和数组中的尾随逗号](chapter-10/index.html#trailing-commas)
+  - [特性：允许函数定义和调用中的尾随逗号](chapter-10/index.html#feature)
 {% comment %}
 
 {% if site.posts.size != 0 %}

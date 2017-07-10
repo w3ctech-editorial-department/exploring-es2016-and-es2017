@@ -1,1 +1,7 @@
-An open JavaScript tutorial book, focusing on client devices, written in Chinese.
+## Bundler LoadError on jekyll serve解决方案
+
+```
+    gem install bundler
+    bundle install
+    bundle exec jekyll serve
+```
