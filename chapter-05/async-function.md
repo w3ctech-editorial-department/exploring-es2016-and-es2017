@@ -4,14 +4,14 @@ title: exploring-es2016-and-es2017（中文版）
 date: 2017-07-08
 modifiedOn: 2017-07-08
 ---
-<h2 id="async-func">异步函数</h2>
+<h2 id="ch_async-functions">异步函数</h2>
 
 ES2017中新特性“Async Functions”（异步函数）是 Brian Terlson 提议的。
 
 <p style="height: 5px;"></p>
-<h3 id="_c5-overview">概览</h3>
+<h3 id="_overview-2">概览</h3>
 <p style="height: 5px;"></p>
-<h4 id="_c5-variants">函数变体</h4>
+<h4 id="_variants">函数变体</h4>
 
 以下是已经存在的各种异步函数变体。请注意出现的关键词
 *async*。
@@ -40,7 +40,7 @@ ES2017中新特性“Async Functions”（异步函数）是 Brian Terlson 提�
  const foo = async () => {};
  ```
 
- <h4 id="_c5-return-promise">异步函数常返回Promise对象</h4>
+ <h4 id="_async-functions-always-return-promises">异步函数常返回Promise对象</h4>
 
  异步函数 Promise 完成态
 
@@ -62,7 +62,7 @@ asyncFunc().then(x => console.log(x));
 
 asyncFunc().catch(err => console.log(err));//Error: Problem!
  ```
- <h4 id="_c5-await">用 await 进行异步计算的结果处理和错误处理</h4>
+ <h4 id="_handling-results-and-errors-of-asynchronous-computations-via-await">用 await 进行异步计算的结果处理和错误处理</h4>
 
  *await*（只能在异步函数内部使用）等待操作对象 Promise 返回
 
@@ -155,7 +155,7 @@ function asyncFunc() {
  ```
 
 <p style="height: 5px;"></p>
-<h3 id="_c5-understand-async-func">理解异步函数</h3>
+<h3 id="_understanding-async-functions">理解异步函数</h3>
 <p style="height: 5px;"></p>
 
 在我解释异步函数之前，我需要解释一下 Promise 和 generator 可以组合使用，通过类似同步的方法实现异步操作。
@@ -176,7 +176,7 @@ function fetchJson(url) {
 fetchJson('http://example.com/some_file.json')
 .then(obj => console.log(obj));
 ```
-<h4 id="_c5-generators">通过 generator 来编写异步代码</h4>
+<h4 id="_writing-asynchronous-code-via-generators">通过 generator 来编写异步代码</h4>
 
 co 是一个通过 Promise 和 generator 来实现类同步操纵的库，以下是示例：
 
@@ -195,7 +195,7 @@ const fetchJson = co.wrap(function* (url) {
 
 每次回调函数（generator函数）的结果产生 Promise 对象给 co，回调暂停，只有在 Promise 执行完成后，co 才会继续执行回调。如果 Promise 处于完成态，*yield* 返回完成态的结果，如果处于拒绝态，*yield* 抛出拒绝态的错误。此外，co 保证结果是通过回调执行完成才返回的（类似于 *then()* 所做的工作）。
 
-<h4 id="_c5-async-functions">通过几个异步函数来编写异步代码</h4>
+<h4 id="_writing-asynchronous-code-via-async-functions">通过几个异步函数来编写异步代码</h4>
 
 和 co 的语法类似，异步函数主要也是用特定语法：
 
@@ -214,7 +214,7 @@ async function fetchJson(url) {
 
 在异步函数内部，写法更类似于generator。
 
-<h4 id="_c5-settled-asyc">以同步的方法开始，然后异步处理的异步函数</h4>
+<h4 id="_async-functions-are-started-synchronously-settled-asynchronously">以同步的方法开始，然后异步处理的异步函数</h4>
 
 以下是异步函数是如何工作的：
 
@@ -252,7 +252,7 @@ console.log('main'); // (C)
 3、（第B行）Promise异步产生处理结果。
 
 
-<h4 id="_c5-promise-not-wrap">返回没有覆盖的 Promise 对象</h4>
+<h4 id="_returned-promises-are-not-wrapped">返回没有覆盖的 Promise 对象</h4>
 
 Promise 的处理是有操作标准的，按照标准，应该用 *return* 返回 Promise 的完成态 *p* ，这就意味着：
 
@@ -297,9 +297,9 @@ async function asyncFunc() {
 ```
 
 <p style="height: 5px;"></p>
-<h3 id="_c5-tips-for-await">使用 await 的窍门</h3>
+<h3 id="_tips-for-using-await">使用 await 的窍门</h3>
 <p style="height: 5px;"></p>
-<h4 id="_c5-donot-forget-await">不要忘记使用 await </h4>
+<h4 id="_dont-forget-await">不要忘记使用 await </h4>
 
 在异步函数中容易犯的一个错误就是在方法调用中忘记使用 *await* ：
 
@@ -324,7 +324,7 @@ async function foo() {
  第A行的 *await* 关键字保证了 *step1()* 这个方法是在 *foo()* 方法执行之前已经完成执行。
 
 
-<h4 id="_c5-fire-and-forget">不需要使用 await 的特殊情况</h4>
+<h4 id="_you-dont-need-await-if-you-fire-and-forget">不需要使用 await 的特殊情况</h4>
 
 有时候你只需要触发一个异步计算，而对于这个计算什么时候完成并不感兴趣。以下是代码示例：
 ```js
@@ -354,7 +354,7 @@ async function asyncFunc() {
 两种方式利弊共存，*await* 那种写法理解起来更容易。
 
 
-<h4 id="_c5-compare">await 是连续执行的，Promise.all() 是并行的</h4>
+<h4 id="_await-is-sequential-promiseall-is-parallel">await 是连续执行的，Promise.all() 是并行的</h4>
 
 下面的代码做了两种异步函数的调用，用 *asyncFunc1()* 和 *asyncFunc2()* 来表示。
 
@@ -379,12 +379,12 @@ async function foo() {
 有一种方法是等待两个 Promise 完成之后再做其他。而这里我们使用的方法是等待一个Promise的完成，将结果存储在有两个元素的数组中，然后再做其他操作。
 
 <p style="height: 5px;"></p>
-<h3 id="_c5-async-func-and-cb">异步函数和回调</h3>
+<h3 id="_async-functions-and-callbacks">异步函数和回调</h3>
 <p style="height: 5px;"></p>
 
 异步函数的一个限制是 *await* 只影响被其直接覆盖的函数（ *await* 作为函数关键字）。否则，异步函数不能在回调中使用 *await* （但是回调函数可以异步调用自己，后面我们将重点介绍）。这也意味着我们可以有技巧地使用以回调为主的函数方法。例子中我们将使用数组方法 *map()* 和 *forEach()* 。
 
-<h4 id="_c5-map">Array.prototype.map()</h4>
+<h4 id="_arrayprototypemap">Array.prototype.map()</h4>
 
 我们用数组方法 *map()* 开始讲解。在下面的代码示例中，我们想要下载以数组方式存储的一系列 URL 中的文件，然后用数组的方式返回下载好的文件。
 
@@ -444,7 +444,7 @@ async function downloadContent(urls) {
 }
 ```
 
-<h4 id="_c5-foreach">Array.prototype.forEach()</h4>
+<h4 id="_arrayprototypeforeach">Array.prototype.forEach()</h4>
 
 我们使用另一个数组方法 *forEach()* 来打印通过一组 URL 下载的文件的内容：
 
@@ -500,9 +500,9 @@ async function logContent(urls) {
 *map()* 用来创建数组形式的 Promise 对象集合。我们对完成的结果并不感兴趣，只需要等待 *await* 的所有方法执行完成，也就是说我们希望的是在异步函数完成之后所有的执行都已经完成了。我们也可以返回 *Promise.all()* ，但是结果可能是数组中的元素都是未完成状态的。
 
 <p style="height: 5px;"></p>
-<h3 id="_c5-tips-for-async">使用异步函数的窍门</h3>
+<h3 id="_tips-for-using-async-functions">使用异步函数的窍门</h3>
 <p style="height: 5px;"></p>
-<h4 id="_c5-know-your-promises">了解你使用的 Promise </h4>
+<h4 id="_know-your-promises">了解你使用的 Promise </h4>
 
 异步函数的基础就是 Promise 对象，所以理解 Promise 比理解 *await* 更重要。特别是当遇到老代码不是用 Promise 来实现异步函数的时候，你别无选择，只能用 Promise 来重构。
 
@@ -541,7 +541,7 @@ function httpGet(url, responseType="") {
 
 阅读延伸：“Exploring ES6”中章节 [“异步编程中的Promise对象”](http://exploringjs.com/es6/ch_promises.html)
 
-<h4 id="_c5-invoke-async-func">立即调用异步函数表达式</h4>
+<h4 id="_immediately-invoked-async-function-expressions">立即调用异步函数表达式</h4>
 
 有时候在模块或者脚本的顶级区域使用 *await* 是一种很好的选择。当然也只影响异步函数内部。因此你有几种选择。你可以创建一个异步函数 *main()* ，然后立即调用：
 
@@ -566,7 +566,7 @@ main();
 })();
 ```
 
-<h4 id="_c5-unittest-async-func">用异步函数进行单元测试</h4>
+<h4 id="_unit-testing-with-async-functions">用异步函数进行单元测试</h4>
 
 以下代码使用[测试框架mocha](https://mochajs.org/) 来测试异步函数 *asyncFun1()* 和 *asyncFun2()* ：
 
@@ -608,7 +608,7 @@ test('Testing async code', async function () {
 
 mocha 单元测试异步函数有两个优势：代码更精简，能够准确处理返回的 Promise 对象。
 
-<h4 id="_c5-donot-worry-about-unhandled-rejections">不要担心没有处理的拒绝态</h4>
+<h4 id="_dont-worry-about-unhandled-rejections">不要担心没有处理的拒绝态</h4>
 
 当前的 JavaScript 引擎可以在拒绝态未处理的情况下提出警告。以下代码在过去会经常执行失败，但是当前的 JavaScript 引擎可以进行警告：
 ```js
@@ -620,7 +620,7 @@ foo();
 
 
 <p style="height: 5px;"></p>
-<h3 id="_c5-overview">阅读延伸</h3>
+<h3 id="_further-reading-2">阅读延伸</h3>
 <p style="height: 5px;"></p>
 
  - [异步函数](https://github.com/tc39/ecmascript-asyncawait) （提出者Brian Terlson）
