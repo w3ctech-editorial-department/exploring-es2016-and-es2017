@@ -13,6 +13,7 @@ modifiedOn: 2017-06-21
 - [关于作者](introduction/about-the-author.html)
 
 <h2 id="background">背景</h2>
+
 - [TC39制定ECMAScript特性的那些事](chapter-01/the-tc39-process-for-ecmascript-features.html#ch_tc39-process)
   - [ECMAScript规范，由谁来定](chapter-01/the-tc39-process-for-ecmascript-features.html#tc39)
   - [ECMAScript规范，如何制定](chapter-01/the-tc39-process-for-ecmascript-features.html#tc39-process)
@@ -25,6 +26,7 @@ modifiedOn: 2017-06-21
   - [ECMAScript 2016 是不是太过于精简](chapter-02/faq.html#_isnt-ecmascript-2016-too-small)
 
 <h2 id="ecmascript-2016">ECMAScript 2016</h2>
+
 - [Array.prototype.includes](chapter-03/array-prototype-includes.html)
   - [概览](chapter-03/array-prototype-includes.html#overview)
   - [数组方法：includes](chapter-03/array-prototype-includes.html#includes)
@@ -35,6 +37,7 @@ modifiedOn: 2017-06-21
   - [为求幂运算创造的中缀运算符](chapter-04/exponentiation-operator#_an-infix-operator-for-exponentiation)
 
 <h2 id="async-functions">Async functions</h2>
+
 - [异步函数](chapter-05/async-function.html#ch_async-functions)
   - [概览](chapter-05/async-function.html#_overview-2)
     - [函数变体](chapter-05/async-function.html#_variants)
@@ -60,10 +63,12 @@ modifiedOn: 2017-06-21
 - [阅读延伸](chapter-05/async-function.html#_further-reading-2)
 
 <h2 id="ecmascript-2017">ECMAScript 2017</h2>
+
 - [函数定义和调用中的尾随逗号](chapter-10/index.html)
   - [概览](chapter-10/index.html#overview)
   - [对象和数组中的尾随逗号](chapter-10/index.html#trailing-commas)
   - [特性：允许函数定义和调用中的尾随逗号](chapter-10/index.html#feature)
+
 {% comment %}
 
 {% if site.posts.size != 0 %}
